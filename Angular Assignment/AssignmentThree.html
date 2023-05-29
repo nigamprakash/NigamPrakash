@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Current Date</title>
+</head>
+<body>
+  <h1>Current Date</h1>
+  <p id="date"></p>
+
+  <script>
+    var currentDate = new Date();
+    var dateString = currentDate.toDateString();
+
+    var dateElement = document.getElementById('date');
+    dateElement.textContent = dateString;
+  </script>
+</body>
+</html>
