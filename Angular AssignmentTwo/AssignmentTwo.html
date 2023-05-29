@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Async/Await Example</title>
+</head>
+<body>
+  <h1>Async/Await Example</h1>
+
+  <script>
+    function fetchUserData() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          const userData = { username: 'nigam', age: 23 };
+          resolve(userData);
+        }, 2000);
+      });
+    }
+
+    async function getUserData() {
+      try {
+        console.log('Fetching user data...');
+        const userData = await fetchUserData();
+        console.log('User data:', JSON.stringify(userData));
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      } finally {
+        console.log('Async/Await process completed.');
+      }
+    }
+
+    getUserData();
+  </script>
+</body>
+</html>
